@@ -1,0 +1,53 @@
+.calendar-scene { position: relative; width: min(100vw, calc(100svh * 9 / 16)); height: 100svh; overflow: hidden; isolation: isolate; container-type: inline-size; background: #150307; color: #c5a16a; box-shadow: 0 0 100px #0009; }
+.calendar-satin { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.36) saturate(0.8); }
+.calendar-shade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 48%, #26080b09, #0d01058c 80%); }
+.calendar-heading { position: absolute; top: 9%; width: 100%; text-align: center; }
+.calendar-heading h2 { font-family: 'Great Vibes', 'Brush Script MT', cursive; font-size: 11cqw; font-weight: 400; line-height: 1.2; color: #e1bd80; text-shadow: 0 0 20px #d7a96826; margin: 0 0 2.5cqw; }
+.calendar-heading p { font-size: 3.3cqw; font-style: italic; margin: 0; color: #c2a575; }
+.calendar-frame { position: absolute; top: 28%; left: 12%; width: 76%; aspect-ratio: 0.86; background: linear-gradient(115deg, #5c3021, #29110f 22%, #4f271b 85%, #6c4327); border: 1px solid #b18a51; box-shadow: 0 15px 40px #090003a3, 0 2px 3px #000c, inset 0 0 0 3px #230c0c; }
+.calendar-frame::before { content: ''; position: absolute; inset: -5px; border: 1px solid #92653b80; pointer-events: none; }
+.calendar-monogram { height: 7.8%; display: flex; justify-content: center; align-items: center; gap: 2.6cqw; font-size: 2.6cqw; font-weight: 500; letter-spacing: 0.06em; color: #d0a764; text-shadow: 0 1px 3px #160406; }
+.calendar-monogram span { font-size: 2.1cqw; font-style: italic; }
+.calendar-book { position: absolute; inset: 7.8% 2.5% 2.2%; perspective: 1600px; isolation: isolate; }
+.calendar-book::before, .calendar-book::after { content: ''; position: absolute; inset: 3px -1px -3px 2px; background: #e4d9ba; border: 1px solid #b39a68; }
+.calendar-book::before { transform: translate(1px, 2px); }
+.calendar-leaf { position: absolute; z-index: var(--leaf-order); inset: 0; transform-origin: 50% 0; transform-style: preserve-3d; }
+.calendar-page { position: absolute; inset: 0; border: 1px solid #d5c39a; background: radial-gradient(ellipse at 35% 15%, #fffef5, transparent 80%), repeating-linear-gradient(8deg, #9b804503 0 1px, transparent 1px 4px), #f4efdf; backface-visibility: hidden; }
+.calendar-page-front { box-shadow: 0 2px 6px #200d042e; }
+.calendar-page-back { transform: rotateX(180deg); background: linear-gradient(#e5d8ba, #fbf6e7 60%, #c9b991); display: grid; place-items: center; }
+.calendar-page-back span { font-family: 'Great Vibes', cursive; font-size: 6cqw; color: #ae935c66; }
+.calendar-page-content { height: 100%; padding: 4.8cqw 4cqw 2cqw; color: #a0874a; }
+.calendar-page-content h3 { font-size: 8.5cqw; font-weight: 400; text-align: center; line-height: 1.05; margin: 0; }
+.calendar-year { text-align: center; letter-spacing: 0.28em; font-size: 2.7cqw; margin: 1.8cqw 0 4cqw; padding-left: 0.28em; }
+.calendar-weekdays, .calendar-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; }
+.calendar-weekdays { font-size: 2.15cqw; font-weight: 500; letter-spacing: 0.06em; margin-bottom: 1.7cqw; color: #a9915c; }
+.calendar-days { grid-auto-rows: 6.4cqw; gap: 0.3cqw 0; font-size: 3.35cqw; }
+.calendar-day { position: relative; display: grid; place-items: center; font-variant-numeric: lining-nums tabular-nums; }
+.calendar-day.is-today::after { content: ''; position: absolute; width: 5.4cqw; height: 5.4cqw; border: 1px solid #ab8d4b66; border-radius: 50%; }
+.wedding-date-ring { position: absolute; width: 7.9cqw; height: 7.9cqw; overflow: visible; transform: rotate(-9deg); opacity: 0; }
+.wedding-date-ring path { fill: none; stroke: #a77c2b; stroke-width: 1.2; stroke-linecap: round; stroke-dasharray: 150; stroke-dashoffset: 150; }
+.calendar-page-footnote { text-align: center; margin: 2cqw 0 0; font-style: italic; font-size: 2.3cqw; color: #a389506e; }
+.binding-ring { position: absolute; z-index: 30; top: -3%; height: 11%; width: 2.8cqw; border: 1.5px solid #d7b170; border-radius: 50%; background: linear-gradient(90deg, #2f1506, #f8d9a0 35%, #87632c 65%, #301605); box-shadow: 1px 2px 3px #1808049c; }
+.binding-left { left: 24%; }
+.binding-right { right: 24%; }
+.calendar-gold-chain { position: absolute; z-index: 3; width: 13cqw; height: 39cqw; top: 63%; left: -10cqw; overflow: visible; filter: drop-shadow(1px 3px 2px #140104); }
+.calendar-gold-chain path { fill: none; stroke: #dbba81; stroke-width: 2.8; stroke-linecap: round; stroke-dasharray: 0.1 3.3; }
+.calendar-status { position: absolute; top: 83%; width: 100%; padding: 0 4%; text-align: center; min-height: 10%; }
+.calendar-today-label { margin: 0; font-style: italic; font-size: 3.3cqw; color: #c2a575a3; }
+.calendar-final-eyebrow { margin: 0 0 1.9cqw; font-family: 'Great Vibes', cursive; font-size: 6.1cqw; }
+.calendar-status time { font-size: 5.5cqw; letter-spacing: 0.13em; font-variant-numeric: lining-nums tabular-nums; color: #edcd96; }
+.calendar-status time span { color: #ae874b; padding: 0 0.6cqw; }
+.calendar-final-weekday { font-size: 2.9cqw; font-style: italic; margin: 2cqw 0 0; color: #c9a872a6; }
+.calendar-scene.has-arrived .turning-leaf { animation: calendar-page-turn 1.8s cubic-bezier(0.42, 0, 0.22, 1) var(--turn-delay) both; }
+.calendar-scene.is-complete .is-wedding-day { color: #78511f; font-weight: 600; }
+.calendar-scene.is-complete .wedding-date-ring { opacity: 1; }
+.calendar-scene.is-complete .wedding-date-ring path { animation: circle-wedding-date 1.3s ease 0.15s both; }
+.calendar-scene.is-complete .calendar-status { animation: calendar-date-reveal 1.5s ease both; }
+@keyframes calendar-page-turn { 0% { transform: rotateX(0); opacity: 1; } 38% { filter: brightness(0.92); } 65% { filter: brightness(0.78); } 96% { opacity: 1; } 100% { transform: rotateX(179deg); opacity: 0; visibility: hidden; } }
+@keyframes circle-wedding-date { to { stroke-dashoffset: 0; } }
+@keyframes calendar-date-reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.calendar-reduced-motion .turning-leaf { display: none; }
+.calendar-reduced-motion.has-arrived .turning-leaf, .calendar-reduced-motion.is-complete .wedding-date-ring path, .calendar-reduced-motion.is-complete .calendar-status { animation: none; }
+.calendar-reduced-motion.is-complete .wedding-date-ring path { stroke-dashoffset: 0; }
+@media (max-aspect-ratio: 9/16) { .calendar-scene { width: 100vw; } }
+@media (max-height: 600px) { .calendar-heading { top: 6%; } .calendar-frame { top: 25%; } .calendar-status { top: 82%; } }

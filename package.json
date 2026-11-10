@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "react-starter",
   "private": true,
   "version": "0.0.0",
@@ -28,4 +28,3 @@
     "vite": "^8.3.4"
   }
 }
-

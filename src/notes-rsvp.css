@@ -1,0 +1,48 @@
+.notes-scene, .rsvp-scene { position: relative; width: min(100vw, calc(100svh * 9 / 16)); min-height: 100svh; isolation: isolate; container-type: inline-size; box-shadow: 0 0 100px #0009; color: #998046; }
+.notes-scene { display: flex; flex-direction: column; padding: 8svh 0 9svh; background: #f6edda; }
+.notes-paper-background { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; }
+.notes-scene > h2 { font-family: 'Great Vibes', 'Brush Script MT', cursive; font-size: clamp(38px, 10cqw, 56px); line-height: 1.2; font-weight: 400; margin: 2cqw auto 6cqw; width: 88%; text-align: center; color: #9e7938; }
+.notes-cards { width: 84%; margin: 0 auto; display: flex; flex: 1; flex-direction: column; justify-content: center; gap: 5.8cqw; }
+.wedding-note { position: relative; padding: 5.7cqw 5cqw; background: radial-gradient(ellipse at 25% 20%, #fffef6, #f4efdf); border: 1px solid #cdb98a77; box-shadow: 0 7px 12px #88713024, 0 15px 10px -12px #91793f4d; opacity: 0; transform: translateY(12px); text-align: center; }
+.wedding-note::before { content: ''; position: absolute; inset: 4px; border: 1px solid #cbb0772e; pointer-events: none; }
+.wedding-note h3 { font-family: 'Great Vibes', 'Brush Script MT', cursive; font-size: clamp(27px, 7.5cqw, 40px); line-height: 1.18; font-weight: 400; color: #a08745; margin: 0 0 2.7cqw; }
+.wedding-note p { font-size: clamp(13px, 3.7cqw, 18px); line-height: 1.6; margin: 0; color: #978449; }
+.notes-scene.has-arrived .wedding-note { animation: wedding-note-arrive 1.2s ease var(--note-delay) both; }
+@keyframes wedding-note-arrive { to { opacity: 1; transform: translateY(0); } }
+.notes-reduced-motion .wedding-note { opacity: 1; transform: none; }
+.notes-reduced-motion.has-arrived .wedding-note { animation: none; }
+
+.rsvp-scene { padding: 7svh 0 5svh; background: #22030b; scroll-margin-top: 18px; }
+.rsvp-backdrop { position: absolute; z-index: -1; inset: 0; background: linear-gradient(#16020833, #16020877), url('/images/burgundy-satin.png') center / cover; }
+.rsvp-paper { position: relative; width: 92%; min-height: 84svh; margin: 0 auto; padding: 7cqw 7cqw 6cqw; border: 1px solid #cbb17e; background: radial-gradient(ellipse at 25% 10%, #fffdf4, transparent 80%), repeating-linear-gradient(12deg, #a48c4e03 0 1px, transparent 1px 5px), #f4efdf; box-shadow: 0 8px 25px #10000455; }
+.rsvp-paper-frame { position: absolute; inset: 2.2cqw; border: 1px solid #c7ad7677; pointer-events: none; }
+.rsvp-heading { position: relative; text-align: center; margin-bottom: 7cqw; }
+.rsvp-heading h2 { font-family: 'Great Vibes', 'Brush Script MT', cursive; font-size: clamp(38px, 10.2cqw, 58px); font-weight: 400; line-height: 1.2; margin: 0 0 2.8cqw; color: #a08745; }
+.rsvp-heading p { font-size: clamp(13px, 3.5cqw, 17px); font-style: italic; line-height: 1.45; margin: 0; color: #9b884d; }
+.rsvp-form { position: relative; display: flex; flex-direction: column; gap: 6cqw; }
+.rsvp-field { display: flex; flex-direction: column; gap: 2cqw; }
+.rsvp-field > label, .rsvp-attendance legend { font-size: clamp(14px, 3.7cqw, 18px); color: #927b3f; }
+.rsvp-field > label > span { font-style: italic; color: #9f8d60; font-size: 0.9em; }
+.rsvp-field input, .rsvp-field textarea { display: block; width: 100%; border: 1px solid #baa26999; border-radius: 1px; background: #fffdf325; color: #675128; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 17px; line-height: 1.5; padding: 9px 10px; outline: none; color-scheme: light; }
+.rsvp-field input { min-height: 44px; border-width: 0 0 1px; }
+.rsvp-field textarea { resize: vertical; min-height: 102px; max-height: 280px; }
+.rsvp-field input:focus, .rsvp-field textarea:focus { border-color: #98712c; box-shadow: 0 1px 0 #98712c; }
+.rsvp-field input[aria-invalid='true'] { border-color: #9f263a; }
+.rsvp-attendance { border: 0; margin: 0; padding: 0; min-width: 0; }
+.rsvp-attendance legend { margin-bottom: 2cqw; padding: 0; }
+.rsvp-attendance > label { display: flex; align-items: center; gap: 10px; min-height: 37px; font-size: clamp(15px, 3.9cqw, 19px); line-height: 1.35; color: #978449; cursor: pointer; }
+.rsvp-attendance input { width: 16px; height: 16px; margin: 0; accent-color: #9b7b34; color-scheme: light; cursor: pointer; flex-shrink: 0; }
+.rsvp-attendance input:focus-visible { outline: 1px solid #8d6927; outline-offset: 3px; }
+.rsvp-error { margin: 3px 0 0; font-size: 13px; line-height: 1.4; color: #9a2a38; }
+.rsvp-submit { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50px; width: 100%; padding: 8px 15px; border-radius: 999px; border: 2px solid #d4b66f; color: #f3d69c; background: linear-gradient(110deg, #650719, #9b1025 55%, #69081b); box-shadow: 0 3px 9px #4c1a1c2e, inset 0 0 0 1px #e9bf7040; font-size: clamp(16px, 4.1cqw, 21px); line-height: 1.15; }
+.rsvp-submit span { font-size: 11px; font-style: italic; letter-spacing: 0.035em; opacity: 0.8; }
+.rsvp-submit:hover { filter: brightness(1.08); }
+.rsvp-submit:focus-visible { outline: 2px solid #8d6927; outline-offset: 4px; }
+.rsvp-help { margin: -3cqw 0 0; text-align: center; font-size: clamp(11px, 2.9cqw, 14px); line-height: 1.45; font-style: italic; color: #998658; }
+.rsvp-handoff { padding: 4cqw; border: 1px solid #bea26977; background: #f9f2df; color: #7a6738; font-size: 15px; line-height: 1.5; }
+.rsvp-handoff p { margin: 0 0 10px; }
+.rsvp-handoff a { color: #7b4d28; display: inline-flex; align-items: center; gap: 7px; text-underline-offset: 3px; }
+.rsvp-handoff svg { width: 13px; height: 13px; }
+.rsvp-signature { width: 90%; margin: 5cqw auto 0; text-align: center; color: #b99563; font-size: 3.5cqw; font-style: italic; }
+.rsvp-signature span { display: block; font-family: 'Great Vibes', cursive; font-size: 7cqw; margin-top: 1cqw; color: #d4b17a; }
+@media (max-aspect-ratio: 9/16) { .notes-scene, .rsvp-scene { width: 100vw; } }

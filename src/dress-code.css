@@ -1,0 +1,28 @@
+.dress-scene { position: relative; width: min(100vw, calc(100svh * 9 / 16)); min-height: 100svh; padding: 7svh 0 8svh; overflow: hidden; isolation: isolate; container-type: inline-size; background: #26040b; color: #d6b77e; box-shadow: 0 0 100px #0009; }
+.dress-heading, .dress-fabrics, .dress-palette, .dress-guidance { width: 84%; margin-left: auto; margin-right: auto; }
+.dress-backdrop { position: absolute; z-index: -1; inset: 0; background: linear-gradient(#1c02094d, #1b020975 65%, #110106a3), url('/images/burgundy-satin.png') center / cover; }
+.dress-heading { text-align: center; margin-bottom: 7cqw; }
+.dress-heading h2 { font-family: 'Great Vibes', 'Brush Script MT', cursive; font-size: clamp(40px, 12cqw, 64px); font-weight: 400; line-height: 1.2; margin: 0 0 2.4cqw; color: #e0bb7b; text-shadow: 0 0 20px #ca934b25; }
+.dress-heading p { font-size: clamp(12px, 3.8cqw, 18px); font-style: italic; margin: 0; color: #c5a573; }
+.dress-fabrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.4cqw; list-style: none; padding: 0; margin-top: 0; margin-bottom: 0; }
+.dress-fabric { position: relative; aspect-ratio: 0.97; overflow: hidden; border: 1px solid #b38b5070; box-shadow: 0 5px 16px #0900024d; }
+.dress-fabric::after { content: ''; position: absolute; z-index: 2; inset: 4px; border: 1px solid #d7b4772e; pointer-events: none; }
+.dress-fabric-image { position: absolute; inset: 0; background-image: url('/images/dress-materials.png'); background-size: 200% 200%; background-repeat: no-repeat; }
+.dress-fabric-shade { position: absolute; inset: 0; background: linear-gradient(transparent 48%, #18040599); }
+.dress-fabric-label { position: absolute; z-index: 1; left: 0; right: 0; bottom: 3.4cqw; text-align: center; font-family: 'Great Vibes', 'Brush Script MT', cursive; font-size: clamp(24px, 7.8cqw, 38px); line-height: 1.1; color: #f0d39c; text-shadow: 0 1px 5px #2c0907; }
+.dress-palette { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); list-style: none; gap: 1cqw; margin-top: 6cqw; margin-bottom: 0; padding: 0; --reveal-delay: 0.55s; }
+.dress-palette li { display: flex; flex-direction: column; align-items: center; gap: 2.2cqw; }
+.dress-colour { position: relative; display: block; width: 9.5cqw; height: 9.5cqw; border: 1px solid #d1a86f5c; border-radius: 50%; background: radial-gradient(ellipse at 32% 20%, #ffffff1a, transparent 60%), var(--swatch-colour); box-shadow: inset 1px 1px 3px #ffffff09, inset -2px -3px 6px #16000633, 0 2px 7px #0900032e; }
+.dress-colour::after { content: ''; position: absolute; inset: 3px; border: 1px solid #f3d8a01c; border-radius: inherit; }
+.dress-palette li > span:last-child { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(10px, 3cqw, 14px); font-style: italic; color: #d2ae78; }
+.dress-guidance { margin-top: 7cqw; }
+.dress-guidance-item { padding: 4cqw 0; border-top: 1px solid #b18a4c36; }
+.dress-guidance-item h3 { font-family: 'Great Vibes', 'Brush Script MT', cursive; font-size: clamp(25px, 7.3cqw, 36px); line-height: 1.1; font-weight: 400; margin: 0 0 1.9cqw; color: #d7af6c; }
+.dress-guidance-item p { font-size: clamp(13px, 3.9cqw, 18px); line-height: 1.55; margin: 0; color: #d6b987; }
+.dress-lace { position: absolute; left: 0; bottom: 0; width: 100%; height: 5.8cqw; object-fit: cover; object-position: bottom; filter: brightness(0.82) saturate(0.8); opacity: 0.92; pointer-events: none; }
+.dress-reveal { opacity: 0; transform: translateY(12px); }
+.dress-scene.has-arrived .dress-reveal { animation: dress-reveal 1.1s ease var(--reveal-delay, 0s) both; }
+@keyframes dress-reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.dress-reduced-motion .dress-reveal { opacity: 1; transform: none; }
+.dress-reduced-motion.has-arrived .dress-reveal { animation: none; }
+@media (max-aspect-ratio: 9/16) { .dress-scene { width: 100vw; } }

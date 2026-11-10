@@ -1,0 +1,28 @@
+.evening-scene { position: relative; width: min(100vw, calc(100svh * 9 / 16)); min-height: 100svh; display: flex; flex-direction: column; align-items: center; padding: 4svh 0 3svh; overflow: hidden; isolation: isolate; container-type: inline-size; background: #1a0208; color: #977a3b; box-shadow: 0 0 100px #0009; }
+.evening-backdrop { position: absolute; z-index: -1; inset: 0; background: linear-gradient(#18020755, #13010677), url('/images/burgundy-satin.png') center / cover; }
+.evening-paper { position: relative; isolation: isolate; width: 94%; min-height: 83svh; padding: min(12cqw, 5.5svh) min(8cqw, 4svh) min(11cqw, 5svh); display: flex; flex-direction: column; background: #f6edda; box-shadow: 0 10px 40px #10010577, 0 0 0 1px #a17e3e33; }
+.evening-stationery { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; }
+.evening-heading { position: relative; text-align: center; margin: min(5cqw, 2.2svh) 0 min(8cqw, 4svh); }
+.evening-heading h2 { margin: 0 0 2cqw; font-family: 'Great Vibes', 'Brush Script MT', cursive; font-size: clamp(36px, 10.8cqw, 60px); line-height: 1.2; font-weight: 400; color: #916b29; }
+.evening-heading p { font-size: clamp(12px, 3.5cqw, 18px); font-style: italic; line-height: 1.4; margin: 0; color: #9c844b; }
+.evening-timeline { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: min(5.4cqw, 2.5svh); list-style: none; margin: 0; padding: 0; }
+.evening-timeline::before { content: ''; position: absolute; top: 0.8cqw; bottom: 2cqw; left: 15.7%; width: 1px; background: linear-gradient(#b79a59, #b79a5977 88%, transparent); transform-origin: top; transform: scaleY(0); }
+.evening-event { display: grid; grid-template-columns: 12.7% 6% minmax(0, 1fr); align-items: start; opacity: 0; transform: translateY(12px); }
+.evening-event-time { display: block; padding-top: 1.35cqw; font-size: clamp(15px, 4.4cqw, 23px); font-variant-numeric: lining-nums tabular-nums; font-weight: 500; line-height: 1.05; color: #a1843f; }
+.evening-event-time span { display: block; margin-top: 1cqw; font-size: clamp(8px, 2.15cqw, 11px); font-weight: 500; letter-spacing: 0.13em; }
+.evening-event-marker { position: relative; justify-self: center; margin-top: 2.3cqw; width: 1.25cqw; height: 1.25cqw; min-width: 4px; min-height: 4px; border: 1px solid #b1914b; border-radius: 50%; background: #f7efde; box-shadow: 0 0 0 3px #f7efde; }
+.evening-event-copy { padding-left: 3.5cqw; }
+.evening-event-copy h3 { font-family: 'Great Vibes', 'Brush Script MT', cursive; font-size: clamp(27px, 7.8cqw, 40px); line-height: 1.15; font-weight: 400; margin: 0 0 1.3cqw; color: #a0853e; }
+.evening-event-copy p { font-size: clamp(12px, 3.7cqw, 18px); line-height: 1.5; margin: 0; color: #88764b; max-width: 100%; }
+.evening-signoff { display: flex; justify-content: center; align-items: center; gap: 2.5cqw; margin-top: min(7cqw, 3svh); font-size: 3.2cqw; color: #b09254; }
+.evening-signoff span { width: 9cqw; height: 1px; background: linear-gradient(90deg, transparent, #b99a6066); }
+.evening-signoff span:last-child { transform: rotate(180deg); }
+.evening-scene.has-arrived .evening-heading { animation: evening-appear 1s ease both; }
+.evening-scene.has-arrived .evening-timeline::before { animation: evening-line 1.7s ease 0.2s both; }
+.evening-scene.has-arrived .evening-event { animation: evening-appear 1.1s ease var(--event-delay) both; }
+@keyframes evening-line { to { transform: scaleY(1); } }
+@keyframes evening-appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.evening-reduced-motion .evening-heading, .evening-reduced-motion.has-arrived .evening-heading, .evening-reduced-motion.has-arrived .evening-event, .evening-reduced-motion.has-arrived .evening-timeline::before { animation: none; }
+.evening-reduced-motion .evening-event { opacity: 1; transform: none; }
+.evening-reduced-motion .evening-timeline::before { transform: scaleY(1); }
+@media (max-aspect-ratio: 9/16) { .evening-scene { width: 100vw; } }
